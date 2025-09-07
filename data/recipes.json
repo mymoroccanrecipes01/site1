@@ -1,0 +1,175 @@
+{
+  "recipes": [
+    {
+      "id": "better-than-sex-fruit",
+      "title": "Better Than Sex Fruit",
+      "description": "A creamy blend of tropical fruits and sweetened condensed milk creating a luscious, chilled fruit mix.",
+      "category": "desserts",
+      "subcategory": "no-bake",
+      "image": "images/recipes/fruit-salad.jpg",
+      "prepTime": 15,
+      "cookTime": 0,
+      "totalTime": 15,
+      "servings": 8,
+      "difficulty": "easy",
+      "rating": 4.8,
+      "reviews": 342,
+      "tags": ["no-bake", "fruity", "creamy", "summer", "tropical"],
+      "ingredients": [
+        {
+          "item": "Pineapple chunks",
+          "amount": "2",
+          "unit": "cups",
+          "notes": "fresh or canned, drained"
+        },
+        {
+          "item": "Mandarin oranges",
+          "amount": "1",
+          "unit": "can",
+          "notes": "drained"
+        },
+        {
+          "item": "Maraschino cherries",
+          "amount": "1",
+          "unit": "cup",
+          "notes": "drained and halved"
+        },
+        {
+          "item": "Sweetened condensed milk",
+          "amount": "1",
+          "unit": "can",
+          "notes": "14 oz"
+        },
+        {
+          "item": "Cool Whip",
+          "amount": "1",
+          "unit": "container",
+          "notes": "8 oz, thawed"
+        },
+        {
+          "item": "Mini marshmallows",
+          "amount": "2",
+          "unit": "cups"
+        },
+        {
+          "item": "Coconut flakes",
+          "amount": "1",
+          "unit": "cup",
+          "notes": "sweetened"
+        }
+      ],
+      "instructions": [
+        {
+          "step": 1,
+          "instruction": "In a large mixing bowl, combine the drained pineapple chunks, mandarin oranges, and halved maraschino cherries."
+        },
+        {
+          "step": 2,
+          "instruction": "Add the mini marshmallows and coconut flakes to the fruit mixture."
+        },
+        {
+          "step": 3,
+          "instruction": "Pour the sweetened condensed milk over the fruit mixture and gently fold together."
+        },
+        {
+          "step": 4,
+          "instruction": "Fold in the thawed Cool Whip until everything is well combined and creamy."
+        },
+        {
+          "step": 5,
+          "instruction": "Cover and refrigerate for at least 2 hours before serving to allow flavors to meld."
+        },
+        {
+          "step": 6,
+          "instruction": "Serve chilled and enjoy this heavenly fruit salad!"
+        }
+      ],
+      "nutrition": {
+        "calories": 285,
+        "protein": 4,
+        "carbs": 52,
+        "fat": 8,
+        "fiber": 2,
+        "sugar": 48
+      },
+      "tips": [
+        "For best results, chill all ingredients before mixing",
+        "Can be made up to 24 hours ahead",
+        "Try adding chopped pecans for extra crunch"
+      ]
+    },
+    {
+      "id": "lemon-cream-cake",
+      "title": "Lemon Cream Cheese Cake",
+      "description": "Layered lemon filling with cream cheese and buttery yellow cake for a delightful treat.",
+      "category": "desserts",
+      "subcategory": "cakes",
+      "image": "images/recipes/lemon-cake.jpg",
+      "prepTime": 30,
+      "cookTime": 25,
+      "totalTime": 55,
+      "servings": 12,
+      "difficulty": "medium",
+      "rating": 4.6,
+      "reviews": 189,
+      "tags": ["citrus", "creamy", "layered", "special-occasion"],
+      "ingredients": [
+        {
+          "item": "Yellow cake mix",
+          "amount": "1",
+          "unit": "box"
+        },
+        {
+          "item": "Cream cheese",
+          "amount": "8",
+          "unit": "oz",
+          "notes": "softened"
+        },
+        {
+          "item": "Butter",
+          "amount": "1/2",
+          "unit": "cup",
+          "notes": "melted"
+        },
+        {
+          "item": "Powdered sugar",
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "item": "Lemon juice",
+          "amount": "1/4",
+          "unit": "cup",
+          "notes": "fresh"
+        },
+        {
+          "item": "Lemon zest",
+          "amount": "2",
+          "unit": "tbsp"
+        },
+        {
+          "item": "Heavy cream",
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "item": "Vanilla extract",
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "instructions": [
+        {
+          "step": 1,
+          "instruction": "Preheat oven to 350°F. Prepare cake mix according to package directions and bake in two 9-inch round pans."
+        },
+        {
+          "step": 2,
+          "instruction": "Let cakes cool completely on wire racks."
+        },
+        {
+          "step": 3,
+          "instruction": "Beat cream cheese until smooth. Gradually add powdered sugar, lemon juice, and zest."
+        },
+        {
+          "step": 4,
