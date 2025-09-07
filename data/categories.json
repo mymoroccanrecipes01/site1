@@ -1,0 +1,20 @@
+{
+  "categories": [
+    {
+      "id": "breakfast",
+      "name": "Breakfast & Brunch",
+      "description": "Start your day right with delicious morning meals",
+      "image": "images/categories/breakfast.jpg",
+      "recipeCount": 127,
+      "featured": true
+    },
+    {
+      "id": "lunch",
+      "name": "Lunch",
+      "description": "Quick and satisfying midday meals",
+      "image": "images/categories/lunch.jpg",
+      "recipeCount": 89,
+      "featured": true
+    }
+  ]
+}
