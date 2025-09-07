@@ -1,0 +1,28 @@
+name = "recipe-website-api"
+main = "api/worker.js"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+# D1 Database binding
+[[d1_databases]]
+binding = "DB"
+database_name = "recipe_database"
+database_id = "your-database-id-here"
+
+# Environment variables
+[vars]
+ENVIRONMENT = "production"
+
+# Development environment
+[env.development]
+vars = { ENVIRONMENT = "development" }
+
+[[env.development.d1_databases]]
+binding = "DB"
+database_name = "recipe_database_dev"
+database_id = "your-dev-database-id-here"
+
+# Static site hosting
+[site]
+bucket = "./"
+entry-point = "index-d1.html"
