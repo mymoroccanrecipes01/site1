@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Topics & Categories - Recipe Website</title>
+    <meta name="description" content="Browse all recipe categories and topics. Find recipes by cuisine, meal type, dietary restrictions, and cooking method.">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+    <header role="banner">
+        <nav class="container" role="navigation">
+            <a href="../index.html" class="logo">🍳 Recipes</a>
+            <ul class="nav-links">
+                <li><a href="topics.html" class="active">🏷️ Topics</a></li>
+                <li><a href="discover.html">🔍 Discover</a></li>
+                <li><a href="about.html">ℹ️ About Us</a></li>
+                <li><a href="contact.html">📞 Get In Touch</a></li>
+                <li><a href="favorites.html">❤️ Favorites</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+                <button class="mobile-menu-toggle" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Page Header -->
+        <section class="page-header">
+            <h1>Recipe Topics & Categories</h1>
+            <p>Explore our comprehensive collection of recipe categories. From quick weeknight dinners to elaborate holiday feasts, find exactly what you're craving.</p>
+        </section>
+
+        <!-- Search and Filter -->
+        <section class="search-filter-section">
+            <div class="search-container">
+                <input type="search" class="search-bar" placeholder="Search categories..." aria-label="Search categories">
+                <button class="search-btn">🔍</button>
+            </div>
+            
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">All Categories</button>
+                <button class="filter-tab" data-filter="meal-type">Meal Type</button>
+                <button class="filter-tab" data-filter="cuisine">Cuisine</button>
+                <button class="filter-tab" data-filter="dietary">Dietary</button>
+                <button class="filter-tab" data-filter="cooking-method">Cooking Method</button>
+            </div>
+        </section>
+
+        <!-- Main Categories -->
+        <section class="categories-section" data-category="meal-type">
+            <h2>Meal Types</h2>
+            <div class="category-grid">
+                <div class="category-card" data-category-id="breakfast">
+                    <div class="category-image" style="background: linear-gradient(45deg, #ff9a9e, #fecfef);"></div>
+                    <div class="category-content">
+                        <h3>Breakfast & Brunch</h3>
+                        <p>Start your day right with delicious morning meals</p>
+                        <span class="recipe-count">127 recipes</span>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category-id="lunch">
+                    <div class="category-image" style="background: linear-gradient(45deg, #a8edea, #fed6e3);"></div>
+                    <div class="category-content">
+                        <h3>Lunch</h3>
+                        <p>Quick and satisfying midday meals</p>
+                        <span class="recipe-count">89 recipes</span>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category-id="dinner">
+                    <div class="category-image" style="background: linear-gradient(45deg, #ffecd2, #fcb69f);"></div>
+                    <div class="category-content">
+                        <h3>Dinner</h3>
+                        <p>Hearty evening meals for the whole family</p>
+                        <span class="recipe-count">203 recipes</span>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category-id="appetizers">
+                    <div class="category-image" style="background: linear-gradient(45deg, #a8caba, #5d4e75);"></div>
+                    <div class="category-content">
+                        <h3>Appetizers & Snacks</h3>
+                        <p>Perfect starters and bite-sized treats</p>
+                        <span class="recipe-count">156 recipes</span>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category-id="desserts">
+                    <div class="category-image" style="background: linear-gradient(45deg, #f093fb, #f5576c);"></div>
+                    <div class="category-content">
+                        <h3>Desserts</h3>
+                        <p>Sweet treats and indulgent desserts</p>
+                        <span class="recipe-count">178 recipes</span>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category-id="beverages">
+                    <div class="category-image" style="background: linear-gradient(45deg, #4facfe, #00f2fe);"></div>
+                    <div class="category-content">
+                        <h3>Beverages</h3>
+                        <p>Refreshing drinks and cocktails</p>
+                        <span class="recipe-count">67 recipes</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cuisine Categories -->
+        <section class="categories-section" data-category="cuisine" style="display: none;">
+            <h2>Cuisine Types</h2>
+            <div class="category-grid">
+                <div class="category-card" data-category-id="italian">
+                    <div class="category-image" style="background: linear-gradient(45deg, #ff6b6b, #ee5a5a);"></div>
+                    <div class="category-content">
+                        <h3>Italian</h3>
+                        <p>Classic pasta, pizza, and Italian favorites</p>
+                        <span class="recipe-count">94 recipes</span>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category-id="mexican">
+                    <div class="category-image" style="background: linear-gradient(45deg, #ff922b, #fd7e14);"></div>
+                    <div class="category-content">
+                        <h3>Mexican</h3>
+                        <p>Spicy and flavorful Mexican cuisine</p>
+                        <span class="recipe-count">73 recipes</span>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category-id="asian">
+                    <div class="category-image" style="background: linear-gradient(45deg, #51cf66, #40c057);"></div>
+                    <div class="category-content">
+                        <h3>Asian</h3>
+                        <p>Chinese, Japanese, Thai, and more</p>
+                        <span class="recipe-count">112 recipes</span>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category-id="american">
+                    <div class="category-image" style="background: linear-gradient(45deg, #74c0fc, #339af0);"></div>
+                    <div class="category-content">
+                        <h3>American</h3>
+                        <p>Classic American comfort food</p>
+                        <span class="recipe-count">145 recipes</span>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category-id="mediterranean">
+                    <div class="category-image" style="background: linear-gradient(45deg, #20c997, #17a2b8);"></div>
+                    <div class="category-content">
+                        <h3>Mediterranean</h3>
+                        <p>Fresh and healthy Mediterranean dishes</p>
+                        <span class="recipe-count">68 recipes</span>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category-id="indian">
+                    <div class="category-image" style="background: linear-gradient(45deg, #ffd43b, #fab005);"></div>
+                    <div class="category-content">
+                        <h3>Indian</h3>
+                        <p>Aromatic spices and bold flavors</p>
+                        <span class="recipe-count">56 recipes</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dietary Categories -->
+        <section class="categories-section" data-category="dietary" style="display: none;">
+            <h2>Dietary Preferences</h2>
+            <div class="category-grid">
+                <div class="category-card" data-category-id="vegetarian">
+                    <div class="category-image" style="background: linear-gradient(45deg, #8ce99a, #69db7c);"></div>
+                    <div class="category-content">
+                        <h3>Vegetarian</h3>
+                        <p>Delicious meat-free recipes</p>
+                        <span class="recipe-count">189 recipes</span>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category-id="vegan">
+                    <div class="category-image" style="background: linear-gradient(45deg, #51cf66, #40c057);"></div>
+                    <div class="category-content">
+                        <h3>Vegan</h3>
+                        <p>Plant-based recipes for everyone</p>
+                        <span class="recipe-count">134 recipes</span>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category-id="gluten-free">
+                    <div class="category-image" style="background: linear-gradient(45deg, #ffd93d, #ff6b35);"></div>
+                    <div class="category-content">
+                        <h3>Gluten-Free</h3>
+                        <p>Safe options for gluten sensitivity</p>
+                        <span class="recipe-count">97 recipes</span>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category-id="keto">
+                    <div class="category-image" style="background: linear-gradient(45deg, #a8edea, #fed6e3);"></div>
+                    <div class="category-content">
+                        <h3>Keto</h3>
+                        <p>Low-carb, high-fat recipes</p>
+                        <span class="recipe-count">78 recipes</span>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category-id="paleo">
+                    <div class="category-image" style="background: linear-gradient(45deg, #ff8787, #fa5252);"></div>
+                    <div class="category-content">
+                        <h3>Paleo</h3>
+                        <p>Whole foods, ancestral eating</p>
+                        <span class="recipe-count">65 recipes</span>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category-id="dairy-free">
+                    <div class="category-image" style="background: linear-gradient(45deg, #ff9ff3, #f368e0);"></div>
+                    <div class="category-content">
+                        <h3>Dairy-Free</h3>
+                        <p>Recipes without dairy products</p>
+                        <span class="recipe-count">112 recipes</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cooking Method Categories -->
+        <section class="categories-section" data-category="cooking-method" style="display: none;">
+            <h2>Cooking Methods</h2>
+            <div class="category-grid">
+                <div class="category-card" data-category-id="no-bake">
+                    <div class="category-image" style="background: linear-gradient(45deg, #a8caba, #5d4e75);"></div>
+                    <div class="category-content">
+                        <h3>No-Bake</h3>
+                        <p>No oven required recipes</p>
+                        <span class="recipe-count">43 recipes</span>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category-id="one-pot">
+                    <div class="category-image" style="background: linear-gradient(45deg, #ffecd2, #fcb69f);"></div>
+                    <div class="category-content">
+                        <h3>One-Pot Meals</h3>
+                        <p>Easy cleanup, maximum flavor</p>
+                        <span class="recipe-count">89 recipes</span>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category-id="slow-cooker">
+                    <div class="category-image" style="background: linear-gradient(45deg, #ff8787, #fa5252);"></div>
+                    <div class="category-content">
+                        <h3>Slow Cooker</h3>
+                        <p>Set it and forget it meals</p>
+                        <span class="recipe-count">76 recipes</span>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category-id="grilling">
+                    <div class="category-image" style="background: linear-gradient(45deg, #ff922b, #fd7e14);"></div>
+                    <div class="category-content">
+                        <h3>Grilling</h3>
+                        <p>BBQ and outdoor cooking</p>
+                        <span class="recipe-count">54 recipes</span>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category-id="instant-pot">
+                    <div class="category-image" style="background: linear-gradient(45deg, #4facfe, #00f2fe);"></div>
+                    <div class="category-content">
+                        <h3>Instant Pot</h3>
+                        <p>Pressure cooker perfection</p>
+                        <span class="recipe-count">67 recipes</span>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category-id="air-fryer">
+                    <div class="category-image" style="background: linear-gradient(45deg, #ffd43b, #fab005);"></div>
+                    <div class="category-content">
+                        <h3>Air Fryer</h3>
+                        <p>Crispy without the oil</p>
+                        <span class="recipe-count">38 recipes</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Collections -->
+        <section class="featured-collections">
+            <h2>Featured Recipe Collections</h2>
+            <div class="collections-grid">
+                <div class="collection-card">
+                    <h3>🎃 Fall Favorites</h3>
+                    <p>Seasonal recipes featuring pumpkin, apples, and warm spices</p>
+                    <span class="collection-count">24 recipes</span>
+                </div>
+                
+                <div class="collection-card">
+                    <h3>🎄 Holiday Specials</h3>
+                    <p>Festive recipes for Christmas, Thanksgiving, and more</p>
+                    <span class="collection-count">31 recipes</span>
+                </div>
+                
+                <div class="collection-card">
+                    <h3>👨‍👩‍👧‍👦 Family Favorites</h3>
+                    <p>Kid-friendly recipes the whole family will love</p>
+                    <span class="collection-count">42 recipes</span>
+                </div>
+                
+                <div class="collection-card">
+                    <h3>⏰ 30-Minute Meals</h3>
+                    <p>Quick and easy recipes for busy weeknights</p>
+                    <span class="collection-count">67 recipes</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="topics.html">Topics</a></li>
+                        <li><a href="discover.html">Discover</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Popular Categories</h4>
+                    <ul>
+                        <li><a href="category.html?id=quick-easy">Quick & Easy</a></li>
+                        <li><a href="category.html?id=healthy">Healthy</a></li>
+                        <li><a href="category.html?id=desserts">Desserts</a></li>
+                        <li><a href="category.html?id=vegetarian">Vegetarian</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Recipe Website. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Topics page specific functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterTabs = document.querySelectorAll('.filter-tab');
+            const categorySections = document.querySelectorAll('.categories-section');
+            
+            filterTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const filter = this.dataset.filter;
+                    
+                    // Update active tab
+                    filterTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show/hide sections
+                    categorySections.forEach(section => {
+                        if (filter === 'all') {
+                            section.style.display = 'block';
+                        } else {
+                            section.style.display = section.dataset.category === filter ? 'block' : 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Category card clicks
+            const categoryCards = document.querySelectorAll('.category-card');
+            categoryCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const categoryId = this.dataset.categoryId;
+                    window.location.href = `category.html?id=${categoryId}`;
+                });
+            });
+        });
+    </script>
+
+    <style>
+        .page-header {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin-bottom: 3rem;
+            border-radius: var(--border-radius-lg);
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+            color: white;
+        }
+
+        .search-filter-section {
+            margin-bottom: 3rem;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-tab {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--primary-color);
+            background: transparent;
+            color: var(--primary-color);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-tab.active,
+        .filter-tab:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .categories-section {
+            margin-bottom: 4rem;
+        }
+
+        .categories-section h2 {
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .category-image {
+            height: 120px;
+            width: 100%;
+        }
+
+        .category-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .category-content h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .category-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .recipe-count {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .featured-collections {
+            margin-top: 4rem;
+        }
+
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .collection-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .collection-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .collection-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .collection-count {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .filter-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .filter-tab {
+                width: 200px;
+                text-align: center;
+            }
+        }
+    </style>
+</body>
+</html>
