@@ -1,0 +1,34 @@
+{
+    "name": "recipe-website",
+    "version": "1.0.0",
+    "description": "Recipe website with Cloudflare D1 database",
+    "main": "index-d1.html",
+    "scripts": {
+      "dev": "wrangler pages dev ./ --d1 DB=recipe_database_dev",
+      "deploy": "wrangler deploy",
+      "db:create": "wrangler d1 create recipe_database",
+      "db:create:dev": "wrangler d1 create recipe_database_dev",
+      "db:migrate": "wrangler d1 execute recipe_database --file=database/schema.sql",
+      "db:migrate:dev": "wrangler d1 execute recipe_database_dev --file=database/schema.sql",
+      "db:backup": "wrangler d1 export recipe_database --output=backup.sql",
+      "preview": "wrangler pages dev ./ --d1 DB=recipe_database_dev --port 8080",
+      "build": "echo 'No build step required for static site'",
+      "lint": "echo 'Add linting here'",
+      "test": "echo 'Add tests here'"
+    },
+    "keywords": [
+      "recipes",
+      "cooking",
+      "food",
+      "cloudflare",
+      "d1"
+    ],
+    "author": "Recipe Website Team",
+    "license": "MIT",
+    "devDependencies": {
+      "wrangler": "^3.0.0"
+    },
+    "engines": {
+      "node": ">=18.0.0"
+    }
+  }

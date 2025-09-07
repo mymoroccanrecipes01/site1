@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Simple recipes your loved ones will adore. Quick and easy cooking for your family with uncomplicated recipes, everyday ingredients, and stress-free cooking.">
+    <meta name="keywords" content="recipes, cooking, food, easy recipes, family cooking, home cooking">
+    <meta name="author" content="Recipe Website">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yoursite.com/">
+    <meta property="og:title" content="Simple Recipes Your Loved Ones Will Adore">
+    <meta property="og:description" content="Quick and easy cooking for your family with uncomplicated recipes and everyday ingredients.">
+    <meta property="og:image" content="https://yoursite.com/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yoursite.com/">
+    <meta property="twitter:title" content="Simple Recipes Your Loved Ones Will Adore">
+    <meta property="twitter:description" content="Quick and easy cooking for your family with uncomplicated recipes and everyday ingredients.">
+    <meta property="twitter:image" content="https://yoursite.com/images/og-image.jpg">
+
+    <title>Simple Recipes Your Loved Ones Will Adore</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/components.css">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="js/main.js" as="script">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Recipe Website",
+        "url": "https://yoursite.com",
+        "description": "Simple recipes your loved ones will adore",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://yoursite.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Connection Status Indicator -->
+    <div class="connection-status online" aria-live="polite">Online</div>
+
+    <!-- Header -->
+    <header role="banner">
+        <nav class="container" role="navigation" aria-label="Main navigation">
+            <a href="/" class="logo" aria-label="Recipe Website Home">🍳 Recipes</a>
+            
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a href="pages/discover.html" role="menuitem">🔍 Discover</a></li>
+                <li role="none"><a href="pages/about.html" role="menuitem">ℹ️ About Us</a></li>
+                <li role="none"><a href="pages/contact.html" role="menuitem">📞 Get In Touch</a></li>
+                <li role="none"><a href="pages/favorites.html" role="menuitem">❤️ Favorites</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" role="banner">
+        <div class="container">
+            <div class="hero-content">
+                <h1>SIMPLE RECIPES YOUR<br>LOVED ONES WILL ADORE</h1>
+                <p>Welcome to the Recipes. Quick and easy cooking for your family. No fuss, uncomplicated recipes, everyday ingredients, and the happiness of sharing homemade meals without spending too much. Milkshakes, omelets, cookies, fries, chocolate, lasagna... Whether you're using a Thermomix or cooking manually, Fin Recipes keeps your time in the kitchen stress-free!</p>
+                
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <input type="search" 
+                           class="search-bar" 
+                           placeholder="Search for recipes, ingredients, or categories..." 
+                           aria-label="Search recipes"
+                           id="main-search">
+                    <button class="search-btn" aria-label="Search" id="search-button">🔍</button>
+                    
+                    <!-- Search Suggestions Dropdown -->
+                    <div class="search-suggestions" id="search-suggestions" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content" class="container" role="main">
+        
+        <!-- Loading State -->
+        <div class="loading-overlay" id="loading-overlay">
+            <div class="loading-spinner"></div>
+            <p>Loading delicious recipes...</p>
+        </div>
+
+        <!-- Hot Categories Section -->
+        <section id="categories" aria-labelledby="categories-title">
+            <div class="section-header">
+                <h2 id="categories-title" class="section-title">HOT CATEGORIES</h2>
+                <button class="view-more" aria-label="View more categories" id="view-more-categories">View More</button>
+            </div>
+
+            <div class="category-grid" id="categories-grid" role="grid" aria-label="Recipe categories">
+                <!-- Categories will be loaded dynamically -->
+            </div>
+        </section>
+
+        <!-- Freshest Recipes Section -->
+        <section id="freshest" aria-labelledby="freshest-title">
+            <div class="section-header">
+                <h2 id="freshest-title" class="section-title">FRESHEST RECIPES</h2>
+                <button class="view-more" aria-label="View more fresh recipes" id="view-more-fresh">View More</button>
+            </div>
+
+            <div class="recipe-grid" id="freshest-recipes" role="grid" aria-label="Latest recipes">
+                <!-- Latest recipes will be loaded dynamically -->
+            </div>
+        </section>
+
+        <!-- Our Favorite Picks Section -->
+        <section id="favorites" aria-labelledby="favorites-title">
+            <div class="section-header">
+                <h2 id="favorites-title" class="section-title">OUR FAVORITE PICKS</h2>
+                <button class="view-more" aria-label="View more favorite recipes" id="view-more-favorites">View More</button>
+            </div>
+
+            <div class="recipe-grid" id="favorite-recipes" role="grid" aria-label="Our favorite recipes">
+                <!-- Featured recipes will be loaded dynamically -->
+            </div>
+        </section>
+
+        <!-- Quick Access Section -->
+        <section id="quick-access" aria-labelledby="quick-access-title">
+            <div class="section-header">
+                <h2 id="quick-access-title" class="section-title">QUICK ACCESS</h2>
+            </div>
+
+            <div class="quick-access-grid">
+                <div class="quick-access-card" data-filter="difficulty=easy">
+                    <div class="quick-icon">⚡</div>
+                    <h3>Easy Recipes</h3>
+                    <p>Simple recipes for beginners</p>
+                </div>
+                
+                <div class="quick-access-card" data-filter="max_time=30">
+                    <div class="quick-icon">⏰</div>
+                    <h3>30-Minute Meals</h3>
+                    <p>Quick recipes for busy days</p>
+                </div>
+                
+                <div class="quick-access-card" data-filter="category=vegetarian">
+                    <div class="quick-icon">🥬</div>
+                    <h3>Vegetarian</h3>
+                    <p>Meat-free delicious options</p>
+                </div>
+                
+                <div class="quick-access-card" data-filter="category=desserts">
+                    <div class="quick-icon">🍰</div>
+                    <h3>Desserts</h3>
+                    <p>Sweet treats and indulgences</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Signup -->
+        <section class="newsletter-section" aria-labelledby="newsletter-title">
+            <div class="newsletter-container">
+                <h2 id="newsletter-title">Stay Updated with New Recipes</h2>
+                <p>Get the latest recipes delivered straight to your inbox!</p>
+                <form class="newsletter-form" id="newsletter-form" role="form" aria-label="Newsletter signup">
+                    <input type="email" 
+                           class="newsletter-input" 
+                           placeholder="Enter your email address" 
+                           required 
+                           aria-label="Email address"
+                           id="newsletter-email">
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="pages/topics.html">Topics</a></li>
+                        <li><a href="pages/discover.html">Discover</a></li>
+                        <li><a href="pages/about.html">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Recipe Categories</h4>
+                    <ul id="footer-categories">
+                        <!-- Categories will be populated dynamically -->
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="pages/contact.html">Contact Us</a></li>
+                        <li><a href="pages/faq.html">FAQ</a></li>
+                        <li><a href="pages/privacy.html">Privacy Policy</a></li>
+                        <li><a href="pages/terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook" title="Follow us on Facebook">📘</a>
+                        <a href="#" aria-label="Twitter" title="Follow us on Twitter">🐦</a>
+                        <a href="#" aria-label="Instagram" title="Follow us on Instagram">📷</a>
+                        <a href="#" aria-label="Pinterest" title="Follow us on Pinterest">📌</a>
+                        <a href="#" aria-label="YouTube" title="Subscribe to our YouTube channel">📺</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Fin Recipes. All rights reserved.</p>
+                <p>Made with ❤️ for food lovers everywhere</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/api-client.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Homepage specific JavaScript -->
+    <script>
+        class Homepage {
+            constructor() {
+                this.dataManager = window.recipeDataManager;
+                this.searchTimeout = null;
+                this.init();
+            }
+
+            async init() {
+                try {
+                    this.showLoading();
+                    await this.loadData();
+                    this.setupEventListeners();
+                    this.hideLoading();
+                } catch (error) {
+                    console.error('Error initializing homepage:', error);
+                    this.showError();
+                }
+            }
+
+            showLoading() {
+                document.getElementById('loading-overlay').style.display = 'flex';
+            }
+
+            hideLoading() {
+                document.getElementById('loading-overlay').style.display = 'none';
+            }
+
+            showError() {
+                this.hideLoading();
+                const container = document.querySelector('#main-content');
+                container.innerHTML = `
+                    <div class="error-message">
+                        <div class="error-icon">⚠️</div>
+                        <h2>Unable to Load Recipes</h2>
+                        <p>We're having trouble connecting to our recipe database. Please check your internet connection and try again.</p>
+                        <button class="btn btn-primary" onclick="window.location.reload()">Retry</button>
+                    </div>
+                `;
+            }
+
+            async loadData() {
+                try {
+                    const data = await this.dataManager.loadHomepageData();
+                    
+                    // Load categories
+                    this.renderCategories(data.categories);
+                    
+                    // Load latest recipes
+                    this.renderRecipes(data.latestRecipes, 'freshest-recipes');
+                    
+                    // Load featured recipes
+                    this.renderRecipes(data.featuredRecipes, 'favorite-recipes');
+                    
+                    // Populate footer categories
+                    this.populateFooterCategories(data.categories.slice(0, 4));
+                    
+                } catch (error) {
+                    console.error('Error loading homepage data:', error);
+                    throw error;
+                }
+            }
+
+            renderCategories(categories) {
+                const container = document.getElementById('categories-grid');
+                
+                if (!categories || categories.length === 0) {
+                    container.innerHTML = '<p class="no-data">No categories available at the moment.</p>';
+                    return;
+                }
+
+                container.innerHTML = categories.map(category => 
+                    window.RecipeUIHelpers.createCategoryCard(category)
+                ).join('');
+
+                // Add click handlers
+                container.querySelectorAll('.category-card').forEach(card => {
+                    card.addEventListener('click', () => {
+                        const slug = card.dataset.categorySlug;
+                        window.location.href = `pages/category.html?id=${slug}`;
+                    });
+                });
+            }
+
+            renderRecipes(recipes, containerId) {
+                const container = document.getElementById(containerId);
+                
+                if (!recipes || recipes.length === 0) {
+                    container.innerHTML = '<p class="no-data">No recipes available at the moment.</p>';
+                    return;
+                }
+
+                // Mark favorites
+                const recipesWithFavorites = recipes.map(recipe => ({
+                    ...recipe,
+                    isFavorite: this.dataManager.isFavorite(recipe.id)
+                }));
+
+                container.innerHTML = recipesWithFavorites.map(recipe => 
+                    window.RecipeUIHelpers.createRecipeCard(recipe)
+                ).join('');
+
+                // Add click handlers
+                this.setupRecipeCardHandlers(container);
+            }
+
+            setupRecipeCardHandlers(container) {
+                // Recipe card clicks
+                container.querySelectorAll('.recipe-card').forEach(card => {
+                    const recipeId = card.dataset.recipeId;
+                    
+                    card.addEventListener('click', (e) => {
+                        if (!e.target.closest('.favorite-btn')) {
+                            // Navigate to recipe detail
+                            window.location.href = `pages/recipe-detail.html?id=${recipeId}`;
+                        }
+                    });
+                });
+
+                // Favorite button clicks
+                container.querySelectorAll('.favorite-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        this.toggleFavorite(btn);
+                    });
+                });
+            }
+
+            toggleFavorite(button) {
+                const recipeId = parseInt(button.dataset.recipeId);
+                const recipeCard = button.closest('.recipe-card');
+                const recipeTitle = recipeCard.querySelector('.recipe-title').textContent;
+                
+                if (this.dataManager.isFavorite(recipeId)) {
+                    this.dataManager.removeFromFavorites(recipeId);
+                    button.classList.remove('active');
+                    button.innerHTML = '♡';
+                    button.setAttribute('aria-label', 'Add to favorites');
+                } else {
+                    // Create a simplified recipe object for favorites
+                    const recipe = {
+                        id: recipeId,
+                        title: recipeTitle,
+                        image_url: recipeCard.querySelector('.recipe-image').style.backgroundImage.slice(5, -2),
+                        rating: 0, // Will be updated from full data later
+                        total_time: 0
+                    };
+                    
+                    this.dataManager.addToFavorites(recipe);
+                    button.classList.add('active');
+                    button.innerHTML = '♥';
+                    button.setAttribute('aria-label', 'Remove from favorites');
+                }
+
+                // Add animation
+                button.style.transform = 'scale(1.2)';
+                setTimeout(() => {
+                    button.style.transform = 'scale(1)';
+                }, 200);
+            }
+
+            populateFooterCategories(categories) {
+                const container = document.getElementById('footer-categories');
+                container.innerHTML = categories.map(category => 
+                    `<li><a href="pages/category.html?id=${category.slug}">${category.name}</a></li>`
+                ).join('');
+            }
+
+            setupEventListeners() {
+                // Search functionality
+                const searchInput = document.getElementById('main-search');
+                const searchButton = document.getElementById('search-button');
+                const searchSuggestions = document.getElementById('search-suggestions');
+
+                searchInput.addEventListener('input', (e) => {
+                    clearTimeout(this.searchTimeout);
+                    const query = e.target.value.trim();
+                    
+                    if (query.length >= 2) {
+                        this.searchTimeout = setTimeout(() => {
+                            this.showSearchSuggestions(query);
+                        }, 300);
+                    } else {
+                        searchSuggestions.style.display = 'none';
+                    }
+                });
+
+                searchInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        this.performSearch(searchInput.value);
+                    }
+                });
+
+                searchButton.addEventListener('click', () => {
+                    this.performSearch(searchInput.value);
+                });
+
+                // Hide suggestions when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!e.target.closest('.search-container')) {
+                        searchSuggestions.style.display = 'none';
+                    }
+                });
+
+                // View more buttons
+                document.getElementById('view-more-categories').addEventListener('click', () => {
+                    window.location.href = 'pages/topics.html';
+                });
+
+                document.getElementById('view-more-fresh').addEventListener('click', () => {
+                    window.location.href = 'pages/discover.html?filter=latest';
+                });
+
+                document.getElementById('view-more-favorites').addEventListener('click', () => {
+                    window.location.href = 'pages/discover.html?filter=featured';
+                });
+
+                // Quick access cards
+                document.querySelectorAll('.quick-access-card').forEach(card => {
+                    card.addEventListener('click', () => {
+                        const filter = card.dataset.filter;
+                        window.location.href = `pages/discover.html?${filter}`;
+                    });
+                });
+
+                // Newsletter form
+                document.getElementById('newsletter-form').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.handleNewsletterSignup();
+                });
+            }
+
+            async showSearchSuggestions(query) {
+                try {
+                    const results = await this.dataManager.searchRecipes(query, {}, 1, 5);
+                    const suggestions = document.getElementById('search-suggestions');
+                    
+                    if (results.recipes.length > 0) {
+                        suggestions.innerHTML = results.recipes.map(recipe => `
+                            <div class="search-suggestion" data-recipe-slug="${recipe.slug}">
+                                <img src="${recipe.image_url || '/images/placeholder.jpg'}" alt="${recipe.title}" class="suggestion-image">
+                                <div class="suggestion-content">
+                                    <h4>${recipe.title}</h4>
+                                    <p>${recipe.description.substring(0, 100)}...</p>
+                                </div>
+                            </div>
+                        `).join('');
+                        
+                        suggestions.style.display = 'block';
+                        
+                        // Add click handlers to suggestions
+                        suggestions.querySelectorAll('.search-suggestion').forEach(item => {
+                            item.addEventListener('click', () => {
+                                const slug = item.dataset.recipeSlug;
+                                window.location.href = `pages/recipe-detail.html?slug=${slug}`;
+                            });
+                        });
+                    } else {
+                        suggestions.style.display = 'none';
+                    }
+                } catch (error) {
+                    console.error('Error fetching search suggestions:', error);
+                }
+            }
+
+            performSearch(query) {
+                if (query.trim()) {
+                    window.location.href = `pages/search-results.html?q=${encodeURIComponent(query)}`;
+                }
+            }
+
+            handleNewsletterSignup() {
+                const emailInput = document.getElementById('newsletter-email');
+                const email = emailInput.value.trim();
+                
+                if (!email) return;
+
+                // Show success message (in real app, you'd send to backend)
+                const form = document.getElementById('newsletter-form');
+                const originalHTML = form.innerHTML;
+                
+                form.innerHTML = `
+                    <div class="newsletter-success">
+                        <h3>✅ Thank you for subscribing!</h3>
+                        <p>You'll receive our latest recipes and cooking tips.</p>
+                    </div>
+                `;
+
+                // Reset form after 3 seconds
+                setTimeout(() => {
+                    form.innerHTML = originalHTML;
+                    this.setupEventListeners(); // Re-attach listeners
+                }, 3000);
+            }
+        }
+
+        // Initialize homepage when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new Homepage();
+        });
+    </script>
+
+    <!-- Additional Styles -->
+    <style>
+        /* Loading Overlay */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid var(--bg-accent);
+            border-top: 4px solid var(--secondary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1rem;
+        }
+
+        /* Search Suggestions */
+        .search-suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid var(--bg-accent);
+            border-radius: var(--border-radius-sm);
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .search-suggestion {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid var(--bg-accent);
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .search-suggestion:hover {
+            background: var(--bg-secondary);
+        }
+
+        .search-suggestion:last-child {
+            border-bottom: none;
+        }
+
+        .suggestion-image {
+            width: 50px;
+            height: 50px;
+            border-radius: var(--border-radius-sm);
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+
+        .suggestion-content h4 {
+            margin: 0 0 0.25rem 0;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+        }
+
+        .suggestion-content p {
+            margin: 0;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.3;
+        }
+
+        /* Quick Access Grid */
+        .quick-access-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .quick-access-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quick-access-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .quick-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .quick-access-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .quick-access-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Error Message */
+        .error-message {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: white;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            margin: 2rem 0;
+        }
+
+        .error-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .error-message h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .error-message p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        /* No Data Message */
+        .no-data {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        /* Newsletter Success */
+        .newsletter-success {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .newsletter-success h3 {
+            color: var(--success-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .newsletter-success p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        /* Loading Skeleton */
+        .loading-skeleton {
+            pointer-events: none;
+        }
+
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        .skeleton-title {
+            height: 1.2rem;
+            margin-bottom: 0.5rem;
+            border-radius: 4px;
+        }
+
+        .skeleton-text {
+            height: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 4px;
+        }
+
+        .skeleton-text.short {
+            width: 60%;
+        }
+
+        @keyframes loading {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .quick-access-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .search-suggestions {
+                max-height: 200px;
+            }
+            
+            .suggestion-content h4 {
+                font-size: 0.8rem;
+            }
+            
+            .suggestion-content p {
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</body>
+</html>
